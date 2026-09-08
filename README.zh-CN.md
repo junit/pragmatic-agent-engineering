@@ -102,6 +102,9 @@ AI 大幅降低了代码生成成本，却没有同步降低以下成本：
 - [`reliability.md`](./playbooks/reliability.md)
 - [`distributed-systems.md`](./playbooks/distributed-systems.md)
 - [`data-engineering.md`](./playbooks/data-engineering.md)
+- [`debugging.md`](./playbooks/debugging.md)
+- [`compatibility.md`](./playbooks/compatibility.md)
+- [`agent-systems.md`](./playbooks/agent-systems.md)
 - [`testing.md`](./playbooks/testing.md)
 
 原则是：

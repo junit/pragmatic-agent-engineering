@@ -104,6 +104,9 @@ Keep the core small and load domain knowledge only when relevant:
 - [`reliability.md`](./playbooks/reliability.md)
 - [`distributed-systems.md`](./playbooks/distributed-systems.md)
 - [`data-engineering.md`](./playbooks/data-engineering.md)
+- [`debugging.md`](./playbooks/debugging.md)
+- [`compatibility.md`](./playbooks/compatibility.md)
+- [`agent-systems.md`](./playbooks/agent-systems.md)
 - [`testing.md`](./playbooks/testing.md)
 
 > **Minimum Sufficient Context: load only what the current task needs.**

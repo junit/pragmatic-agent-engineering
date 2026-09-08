@@ -17,7 +17,7 @@ Only `AGENTS.md` defines cross-domain core rules.
 Introduce the project, philosophy, usage, and community entry points.
 
 ### playbooks/
-Add domain-specific guidance. Playbooks must not override the Core Policy.
+Add domain-specific guidance. Playbooks must not override the Core Policy. This includes reusable operational domains such as debugging, compatibility/migration, and agent-system coordination when they are relevant to a task.
 
 ### examples/
 Provide evidence: how complexity grew, how it was simplified, and what necessary protections were retained.

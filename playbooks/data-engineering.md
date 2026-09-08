@@ -20,6 +20,7 @@ ETL/ELT, CDC, batch/stream pipelines, synchronization, cleaning, transformation,
 ## Default Heuristics
 
 - Correctness before throughput.
+- Distinguish declared pipeline configuration from effective runtime configuration and observed behavior; version-specific connector or engine capabilities must be verified against the actual deployed version.
 - Choose the minimum delivery semantics that satisfy real requirements for duplicates, delay, recomputation, deduplication, and loss recovery.
 - Prefer recomputable derived pipelines when economically reasonable.
 - Make replay/retry/backfill boundaries idempotent where practical.

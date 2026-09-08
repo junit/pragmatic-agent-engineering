@@ -58,6 +58,10 @@ Clearly distinguish:
 
 Never present assumptions as facts.
 
+When direct evidence is available, prefer the actual code, runtime state, effective configuration, logs, and current test output over design documents, memory, intended configuration, or stale reports.
+
+Distinguish declared or intended state from effective or observed state. For version-sensitive tools, libraries, protocols, and platforms, verify the actual version or runtime capability before relying on it.
+
 Do not let historical implementation, framework habits, or design patterns dictate the solution.
 
 Do not use first-principles reasoning as an excuse to reinvent mature solutions unnecessarily.
@@ -459,6 +463,8 @@ Run what is appropriate:
 - data validation;
 - performance/security validation.
 
+Completion claims should rely on verification performed after the relevant change. If prior verification is reused because the verified inputs and artifacts are unchanged, identify it as inherited evidence rather than presenting it as a fresh run.
+
 ## Complexity
 - Did we add unnecessary long-term mechanisms?
 - Can old complexity be removed?
@@ -498,6 +504,8 @@ For complex tasks, explain as needed:
 - risks;
 - implementation and verification results.
 
+Prefer scan-friendly, decision-first output. Use tables, headings, and lists when they improve comparison or navigation, not as decoration; avoid repeating the same conclusion in multiple sections.
+
 Do not expose or request full internal chain-of-thought.
 
 ---
@@ -521,6 +529,9 @@ AGENTS.md
     ├── reliability.md
     ├── distributed-systems.md
     ├── data-engineering.md
+    ├── debugging.md
+    ├── compatibility.md
+    ├── agent-systems.md
     └── testing.md
 ```
 

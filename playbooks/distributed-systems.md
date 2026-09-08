@@ -22,8 +22,10 @@ Service calls, messaging, distributed jobs, multi-node execution, distributed lo
 - Prefer local/single-node/single-store solutions while they meet real requirements.
 - Minimize shared state and coordination before introducing more locks and protocols.
 - Prefer idempotent operations where network retries are unavoidable.
+- Treat capacity exhaustion as a flow-control event first, not automatically as a fatal system condition; escalate to termination only when integrity, safety, or the explicit contract requires it.
 - Avoid distributed transactions by default; first examine business boundaries, eventual consistency, and local compensation.
 - Make ownership explicit: which system has final authority over a state?
+- Make direction and time semantics explicit when they matter; avoid ambiguous terms such as `in/out` or `latency` when the contract actually distinguishes upstream/downstream, request/response, one-way delay, or round-trip time.
 
 ## Escalation Conditions
 

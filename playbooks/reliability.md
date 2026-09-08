@@ -23,6 +23,7 @@ External calls, background jobs, message handling, async workflows, retries, ide
 - Retry only failures that are actually recoverable.
 - Bound retries by attempts and/or total time, use backoff as appropriate, and consider downstream capacity.
 - Prefer failures that are observable, diagnosable, and recoverable over opaque self-healing machinery.
+- Keep primary-operation failure separate from logging, metrics, notification, and reporting failure unless the primary contract explicitly depends on those side effects.
 - Manual recovery is valid for rare, low-impact, easy-to-diagnose failures.
 
 ## Escalation Conditions

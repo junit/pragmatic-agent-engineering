@@ -15,10 +15,13 @@ New features, bug fixes, refactoring, APIs, data processing, security logic, mig
 1. **Critical behavior must be verifiable.** “The code looks right” is not completion.
 2. **Bug fixes should include regression verification when the bug can reasonably be reproduced.**
 3. **High-risk contracts require appropriate tests.** Authorization, data integrity, public APIs, migrations, and high-risk failure paths need direct verification.
+4. **Expected behavior needs a source.** Do not silently turn a tester, model, or implementation assumption into a product or API contract; unresolved material behavior should remain explicit.
 
 ## Default Heuristics
 
 - Test behavior, not structure: prioritize inputs, outputs, state changes, invariants, and external contracts.
+- Prefer observable acceptance signals. For important flows, verify the relevant UI/API result, durable state, external side effect, or persistence outcome rather than vague statements such as “works correctly.”
+- Trace high-risk tests back to the requirement, invariant, incident, or external contract they protect.
 - Typical priority: core invariants → critical business paths → high-risk failures → external contracts → ordinary behavior → low-value implementation details.
 - Match test depth to risk.
 - If simple business behavior requires extensive mocking, inspect whether the architecture is over-fragmented.

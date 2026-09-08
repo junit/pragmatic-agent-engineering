@@ -17,6 +17,7 @@ Apply when a task involves authentication, authorization, tenant/data isolation,
 3. **Use least privilege.** Users, services, and credentials receive only the permissions required for their responsibility.
 4. **Do not expose sensitive information unnecessarily.** Secrets, passwords, tokens, and sensitive data should not leak into logs, URLs, clients, or ordinary configuration.
 5. **Treat security-boundary changes as high risk.** Material changes to authentication, authorization, isolation, secrets, or sensitive-data handling require the High Risk workflow.
+6. **Identity, functional permission, and data scope are distinct.** Being authenticated or belonging to a broad identity group does not imply access to every protected resource; missing or invalid scope must not silently widen access.
 
 ## Default Heuristics
 
@@ -24,6 +25,8 @@ Apply when a task involves authentication, authorization, tenant/data isolation,
 - For paths, URLs, and identifiers, prefer `canonicalize → validate → use` over endless special-case filters.
 - Prefer mature framework security capabilities; avoid inventing authentication, password schemes, token formats, or cryptographic protocols without necessity.
 - Place authorization close to the actual protected resource boundary.
+- Trust forwarded client identity or source-IP headers only from explicitly trusted proxies; normalize or overwrite them at the trusted ingress instead of accepting arbitrary client-supplied values.
+- During a suspected compromise, preserve useful evidence before destructive cleanup when safe, while prioritizing containment of active access and revocation/rotation of compromised credentials.
 - When identity or permission cannot be established safely, fail closed.
 
 ## Escalation Conditions

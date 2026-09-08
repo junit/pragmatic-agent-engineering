@@ -38,6 +38,30 @@ What reading, context, conflict, and execution cost does the new rule add?
 
 If existing rules already cover the problem, prefer improving examples, docs, or a Playbook instead of adding another core rule.
 
+## Promoting Experience into Rules
+
+Use the narrowest layer that prevents the repeated failure without turning one incident into universal policy:
+
+```text
+recurring cross-domain invariant -> AGENTS.md
+reusable domain lesson          -> Playbook
+explanatory real-world pattern  -> Example / Docs
+tool- or version-specific fact  -> Adapter / project documentation
+transient incident detail       -> do not promote
+```
+
+Before promotion:
+
+1. identify the repeated problem or high-impact risk;
+2. record the treatment that actually worked;
+3. state where that treatment does not apply;
+4. check whether an existing rule already expresses the same invariant;
+5. choose the narrowest useful layer;
+6. add a verification signal, not just a slogan;
+7. remove or merge older rules made redundant by the new wording.
+
+A single severe security or data-integrity failure can justify a hard rule when the consequence is material and the preventive invariant is stable. Ordinary one-off preferences, vendor quirks, and temporary version behavior usually should not become Core rules.
+
 ## What Usually Does Not Belong in Core
 
 Usually keep these out of `AGENTS.md`:

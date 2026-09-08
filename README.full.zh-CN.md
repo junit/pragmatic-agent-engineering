@@ -235,6 +235,9 @@ Core 只负责“如何做工程判断”。
 - SQL Migration；
 - Retry/Idempotency；
 - Backpressure；
+- 系统化 Debugging；
+- 兼容层与 canonical model；
+- Agent/Skill/Workflow/SSOT 边界；
 - 前端状态；
 - 安全输入边界；
 
